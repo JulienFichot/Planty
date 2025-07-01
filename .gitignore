@@ -1,0 +1,26 @@
+# WordPress core files à ignorer
+wp-admin/
+wp-includes/
+readme.html
+license.txt
+
+# Cache, log, etc.
+*.log
+*.cache
+*.sql
+*.tar.gz
+*.zip
+*.env
+
+# Configs locales
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/upgrade/
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+node_modules/
