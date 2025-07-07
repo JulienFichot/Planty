@@ -271,3 +271,13 @@ if ( ! function_exists( 'hello_elementor_body_open' ) ) {
 require HELLO_THEME_PATH . '/theme.php';
 
 HelloTheme\Theme::instance();
+
+add_filter('wp_nav_menu_items', 'ajouter_lien_admin_si_connecte', 10, 2);
+
+function ajouter_lien_admin_si_connecte($items, $args) {
+    // Remplace 'menu-1' par le slug de ton menu cible
+    if (is_user_logged_in() && $args->theme_location === 'menu-1') {
+        $items .= '<li><a href="' . esc_url(admin_url()) . '">Admin</a></li>';
+    }
+    return $items;
+}
